@@ -39,6 +39,15 @@ app.post('/books', async (request, response) => {
     }
 });
 
+//route for get all books
+app.get('/books', async (request, response) => {
+    try{
+
+    }catch(error) {
+        
+    }
+});
+
 mongoose
     .connect(mongoURI)
     .then(() => {
