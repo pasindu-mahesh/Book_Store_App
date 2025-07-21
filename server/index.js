@@ -96,6 +96,9 @@ app.put('/books/:id', async (request, response) => {
     }
 });
 
+// delete a book
+app.delete();
+
 mongoose
     .connect(mongoURI)
     .then(() => {
