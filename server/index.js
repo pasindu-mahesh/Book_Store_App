@@ -41,14 +41,29 @@ app.post('/books', async (request, response) => {
 
 //route for get all books
 app.get('/books', async (request, response) => {
-    try{
+    try {
         const books = await Book.find({});
         return response.status(200).send({
             count: books.length,
             data: books
         });
-        
-    }catch(error) {
+
+    } catch (error) {
+        console.log(error.message);
+        response.status(500).send({ message: error.message });
+    }
+});
+
+//route for get one book from databse by ID
+app.get('/books/:id', async (request, response) => {
+    try {
+
+        const { id } = request.params;
+
+        const book = await Book.findById(id);
+        return response.status(200).send(book);
+
+    } catch (error) {
         console.log(error.message);
         response.status(500).send({ message: error.message });
     }
