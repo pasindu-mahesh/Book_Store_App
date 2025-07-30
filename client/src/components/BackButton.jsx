@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { BsArrowLeft } from 'react-icons/md';
+import { BsArrowLeft } from 'react-icons/bs';
 
 const BackButton = ({ destination = '/' }) => {
     return (
@@ -10,4 +10,4 @@ const BackButton = ({ destination = '/' }) => {
         </div>
     )
 }
-export default BackButton
+export default BackButton;
