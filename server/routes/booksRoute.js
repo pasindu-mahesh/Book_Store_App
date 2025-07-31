@@ -8,17 +8,17 @@ router.post('/', async (request, response) => {
     try {
         if (
             !request.body.title ||
-            !request.body.auther ||
-            !request.body.publisheYear
+            !request.body.author ||
+            !request.body.publishYear
         ) {
-            return response.stetus(400).send({
-                message: 'Please provide all the required fields: title, auther, publisheYear',
+            return response.status(400).send({
+                message: 'Please provide all the required fields: title, author, publishYear',
             });
         }
         const newBook = {
             title: request.body.title,
-            auther: request.body.auther,
-            publisheYear: request.body.publisheYear,
+            author: request.body.author,
+            publishYear: request.body.publishYear,
         };
         const book = await Book.create(newBook);
 
@@ -64,11 +64,11 @@ router.put('/:id', async (request, response) => {
     try {
         if (
             !request.body.title ||
-            !request.body.auther ||
-            !request.body.publisheYear
+            !request.body.author ||
+            !request.body.publishYear
         ) {
             return response.status(400).send({
-                message: 'Please provide all the required fields: title, auther, publisheYear',
+                message: 'Please provide all the required fields: title, author, publishYear',
             });
         }
         const { id } = request.params;

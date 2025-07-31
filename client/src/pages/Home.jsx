@@ -53,10 +53,10 @@ function Home() {
                   {book.title}
                 </td>
                 <td className='border border-slate-700rounded-md text-center max-md:hidden'>
-                  {book.auther}
+                  {book.author}
                 </td>
                 <td className='border border-slate-700rounded-md text-center max-md:hidden'>
-                  {book.publisheYear}
+                  {book.publishYear}
                 </td>
                 <td className='border border-slate-700rounded-md text-center'>
                   <div className='flex justify-center gap-x-4'>
