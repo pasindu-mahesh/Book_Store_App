@@ -11,6 +11,20 @@ const EditBook = () => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const { id } = useParams();
+  useEffect(() => {
+    setLoading(true);
+    axios.get(`http://localhost:5555/books/${id}`)
+    .then((response) => {
+      setAuthor(response.data.author);
+      setPublishYear(response.data.publishYear);
+      setTitle(response.data.title);
+      setLoading(false);
+    }).catch((error) => {
+      setLoading(false);
+      alert('An error occurred while fetching the book details');
+      console.log(error);
+    });
+  }, []);
   const handleSaveBook = () => {
     const data = {
       title,
